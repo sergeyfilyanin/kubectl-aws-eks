@@ -5,6 +5,8 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.21.2/b
     chmod +x /usr/local/bin/aws-iam-authenticator && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/bin/kubectl 
+    
+RUN apk add --no-cache findutils
 
 RUN kubectl version --client
 COPY entrypoint.sh /entrypoint.sh
