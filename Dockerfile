@@ -6,7 +6,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.21.2/b
     chmod +x ./kubectl && \
     mv ./kubectl /usr/bin/kubectl 
     
-RUN apk add --no-cache findutils
+RUN yum install -y findutils
 
 RUN kubectl version --client
 COPY entrypoint.sh /entrypoint.sh
